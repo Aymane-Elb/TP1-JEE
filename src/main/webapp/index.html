@@ -1,10 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Exercice 2 - Formulaire</title>
+    <style>
+        body{font-family: system-ui, sans-serif; max-width:720px; margin:24px auto; }
+        label{display:inline-block; width:120px; margin:6px 0;}
+        input[type=text], input[type=password], textarea{width:280px; padding:6px;}
+        hr{margin:14px 0;}
+        .row{margin:6px 0;}
+        button{padding:8px 14px; cursor:pointer;}
+    </style>
 </head>
 <body>
+<h2>Exercice 2</h2>
+<ol>
+    <li>Créer un document HTML qui affiche le formulaire suivant :</li>
+</ol>
 
+<!-- action "submit" correspond au mapping de notre Servlet -->
+<form method="post" action="submit" accept-charset="UTF-8">
+    <div class="row">
+        <label for="username">User Name:</label>
+        <input id="username" name="username" type="text" required>
+    </div>
+    <div class="row">
+        <label for="password">Password :</label>
+        <input id="password" name="password" type="password" required>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <label for="firstName">First Name:</label>
+        <input id="firstName" name="firstName" type="text">
+    </div>
+    <div class="row">
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" name="lastName" type="text">
+    </div>
+
+    <div class="row">
+        <label>Gender:</label>
+        <label><input type="radio" name="gender" value="Male" checked> Male</label>
+        <label><input type="radio" name="gender" value="Female"> Female</label>
+    </div>
+
+    <hr>
+
+    <div class="row" style="align-items:flex-start;">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" cols="30"></textarea>
+    </div>
+
+    <hr>
+
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>
