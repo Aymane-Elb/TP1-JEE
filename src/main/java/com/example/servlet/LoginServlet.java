@@ -14,7 +14,6 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
 
-        // Encodage pour bien lire/écrire les accents
         req.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html; charset=UTF-8");
 
@@ -25,7 +24,6 @@ public class LoginServlet extends HttpServlet {
         String gender    = req.getParameter("gender");
         String address   = req.getParameter("address");
 
-        // petite fonction pour échapper le HTML (anti-XSS dans cet exercice)
         java.util.function.Function<String,String> esc = s ->
                 s == null ? "" : s.replace("&","&amp;")
                         .replace("<","&lt;")
